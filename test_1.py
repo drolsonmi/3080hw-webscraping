@@ -1,12 +1,12 @@
 import pandas as pd
-from hw_webscraping import extract_third_table
+from hw_webscraping import extract_nth_table
 
-def test_extract_third_table():
+def test_extract_nth_table():
     """Test that the third table is correctly extracted."""
     filepath = './data/sample_page.html'
     
     # Get the result from student's function
-    result = extract_third_table(filepath)
+    result = extract_nth_table(filepath, 3)
     
     # Verify it's a DataFrame
     assert isinstance(result, pd.DataFrame), "Function should return a pandas DataFrame"
@@ -23,7 +23,7 @@ def test_extract_third_table():
     assert result.iloc[0, 1] == 'Alice Johnson', "First student name should be Alice Johnson"
     assert result.iloc[1, 4] == 'B+', "Second student's final grade should be B+"
     
-    print("✓ All tests passed for extract_third_table!")
+    print(f"✓ All tests passed for extracting table 3!")
 
 if __name__ == "__main__":
-    test_extract_third_table()
+    test_extract_nth_table()

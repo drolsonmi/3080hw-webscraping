@@ -1,11 +1,11 @@
-from hw_webscraping import extract_fifth_bold_text
+from hw_webscraping import extract_nth_bold_text
 
-def test_extract_fifth_bold_text():
+def test_extract_nth_bold_text():
     """Test that the text from the fifth <b> tag is correctly extracted."""
     filepath = './data/sample_page.html'
     
     # Get the result from student's function
-    result = extract_fifth_bold_text(filepath)
+    result = extract_nth_bold_text(filepath, 5)
     
     # Verify it's a string
     assert isinstance(result, str), "Function should return a string"
@@ -29,7 +29,7 @@ def test_extract_fifth_bold_text():
     # Verify the result is not empty
     assert len(result) > 0, "Result should not be an empty string"
     
-    print("✓ All tests passed for extract_fifth_bold_text!")
+    print("✓ All tests passed for extract_nth_bold_text!")
 
 if __name__ == "__main__":
-    test_extract_fifth_bold_text()
+    test_extract_nth_bold_text()
